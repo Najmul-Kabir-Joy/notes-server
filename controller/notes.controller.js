@@ -47,12 +47,10 @@ const addNote = async (req, res) => {
   try {
     await newData.save((err, result) => {
       if (err) {
-        console.log(err);
         res.status(500).json({
           message: "An error occured. Please try again",
         });
       } else {
-        console.log(result);
         res.json({
           result,
           message: "Posted",
